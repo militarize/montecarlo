@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+*.env
+
+monte_carlo/__pycache__
+monte_carlo/env
