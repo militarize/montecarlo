@@ -7,6 +7,8 @@ Developing this to learn:
 
 and ideas surrounding randomness.
 
+And git.
+
 *Mistakes are mine.*
 
 **Work-in-progress.**
