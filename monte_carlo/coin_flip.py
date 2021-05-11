@@ -9,11 +9,13 @@ class CoinFlip:
         self.number_of_heads = 0
         self.number_of_tails = 0
 
+        # Use the coin flip itself to determine if the coin itself will be fair.
         if (random.randint(0, 1) == 0):
             self.fair = False
-            self.percent_of_heads = CoinFlip.unfair_coin()
+            self.percent_of_heads = random.random()
         else:
             self.fair = True
+            self.percent_of_heads = 0.5
 
     def flip(self, n = 1):
         if self.fair:
@@ -47,5 +49,5 @@ class CoinFlip:
     def results(self):
         return [self.number_of_heads, self.number_of_tails]
 
-    def unfair_coin():
-        return random.random()
+    def is_coin_fair(self):
+        return [self.fair, self.percent_of_heads]

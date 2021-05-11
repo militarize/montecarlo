@@ -5,7 +5,7 @@
 # Will add elements of expectation.
 
 # Imports
-import coin_flip
+from monte_carlo import coin_flip
 
 def main():
     number_of_games = int(input("How many times do you want play?: "))
@@ -20,6 +20,8 @@ def main():
 
             print("Game #: " + str(n+1) + "\tTotal flips: " + 
                 str(number_of_trials))
+            print("Coin fair?\t%-heads: " + str(game.percent_of_heads) + 
+                "\t%-tails: " + str(1 - game.percent_of_heads))
             print("# of heads: " + str(heads))
             print("# of tails: " + str(tails))
         else:
