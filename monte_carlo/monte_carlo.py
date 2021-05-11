@@ -13,12 +13,17 @@ def main():
 
     for n in range(number_of_games):
         game = coin_flip.CoinFlip()
-        game.flip(number_of_trials)
-        [heads, tails] = game.results()
 
-        print("Game #: " + str(n+1) + "\tTotal flips: " + str(number_of_trials))
-        print("# of heads: " + str(heads))
-        print("# of tails: " + str(tails))
+        if (number_of_trials > 1):
+            game.flip(number_of_trials)
+            [heads, tails] = game.results()
+
+            print("Game #: " + str(n+1) + "\tTotal flips: " + 
+                str(number_of_trials))
+            print("# of heads: " + str(heads))
+            print("# of tails: " + str(tails))
+        else:
+            print(game.flip())
 
 if __name__ == "__main__":
     main()
