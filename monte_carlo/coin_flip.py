@@ -17,11 +17,6 @@ class CoinFlip:
                 self.number_of_heads += 1
             else:
                 self.number_of_tails += 1
- 
-        #print("Number of heads: " + str(number_of_heads) + "\t% heads: " + 
-        #    str("{:.16f}".format(number_of_heads / n)))
-        #print("Number of tails: " + str(number_of_tails) + "\t% tails: " + 
-        #    str("{:.16f}".format(number_of_tails / n)))
 
     def results(self):
         return [self.number_of_heads, self.number_of_tails]
