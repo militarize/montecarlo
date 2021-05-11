@@ -5,7 +5,7 @@ Developing this to learn:
 * statistics;
 * gambling theory;
 
-and ideas surrounding randomness.
+and ideas surrounding **randomness**.
 
 And git.
 
