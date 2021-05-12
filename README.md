@@ -1,11 +1,11 @@
 # monte_carlo
 Developing this to learn:
-* Python;
-* Probability theory;
-* Statistics;
-* Gambling theory;
+* python;
+* probability theory;
+* statistics;
+* gambling theory;
 
-and ideas surrounding randomness.
+and ideas surrounding **randomness**.
 
 And git.
 
