@@ -6,13 +6,16 @@
 
 # Imports
 from monte_carlo import coin_flip
+from monte_carlo import player
+
+import numpy as np
 
 def main():
     print("Implementation of Completely Fictitious Casino!")
     print("Game?")
     print("1. Coin flip")
     print("2. Random")
-    
+    print("3: Player testing")    
     option = int(input("Choice: "))
 
     if (option == 1):
@@ -47,6 +50,28 @@ def main():
         print("success: " + str(game.get_heads()))
         print("failure: " + str(game.get_tails()))
         print(game.get_results())
+
+    elif (option == 3):
+        x = int(input("How many players?: "))
+        y = int(input("How many trials?: "))
+        
+        players = []
+        for i in range(x):
+            game = coin_flip.CoinFlip(True)
+            game.game(y)
+            print(game.get_results())
+            
+            p = player.Player()
+            p.post_results(game.get_results())
+            p.get_results()
+
+            players.append(p)
+
+        print(players)
+        
+        for p in players:
+            print(p.get_bankroll())
+            print(p.get_results())
 
     else:
         exit()
