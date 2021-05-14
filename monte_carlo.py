@@ -56,12 +56,10 @@ def main():
         players = []
         for i in range(x):
             game = coin_flip.CoinFlip(True)
-            game.game(y)
-            print(game.get_results())
+            print(game.game(y))
             
             p = player.Player()
             p.post_results(game.get_results())
-            p.get_results()
 
             players.append(p)
 
