@@ -8,8 +8,6 @@
 from monte_carlo import coin_flip
 from monte_carlo import player
 
-import numpy as np
-
 def main():
     print("Implementation of Completely Fictitious Casino!")
     print("Game?")
