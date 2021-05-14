@@ -28,4 +28,13 @@ class Player:
         return self.results
 
     def post_results(self, results):
+        """
+        Very rudimentary results system for now.
+        No actual bet system implemented yet. A win is +500 for now.
+        """
         self.results = np.array(results)
+        for result in results:
+            if result:
+                self.bankroll += 500
+            else:
+                self.bankroll -= 500
