@@ -17,7 +17,7 @@ class CoinFlip:
         self.number_of_tails = 0        # of failures
 
         # values matrix containing success/failure and value?
-        self.values = []
+        self.values = np.empty(1, 2)
         
         if fair:
             self.p = 0.5
@@ -30,7 +30,7 @@ class CoinFlip:
         for i in range(0, n):
             toss = random.random()
 
-            if (toss <= self.p):
+            if (toss < self.p):
                 self.number_of_heads += 1
             else:
                 self.number_of_tails += 1
