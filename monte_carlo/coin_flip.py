@@ -37,8 +37,11 @@ class CoinFlip:
 
             self.values.append(toss)
 
-    # Work with one one array at a time? Or generate all of them at once?
     def game(self, number_of_trials):
+        """
+        Rudimentary implementation of a game.
+        """
+        # Perhaps pass in number of "players" as well, generate ndarray?
         if self.fair:
             self.values = random.randint(2, size = number_of_trials)
         else:
@@ -46,6 +49,8 @@ class CoinFlip:
             for i in range(len(results)):
                 results[i] = int(results[i] * 10) / 10.00
             self.values = results
+
+        return self.values
 
     def get_results(self):
         return self.values
