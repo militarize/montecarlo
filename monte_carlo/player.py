@@ -34,7 +34,13 @@ class Player:
         """
         self.results = np.array(results)
         for result in results:
-            if result:
-                self.bankroll += 500
+            if self.bankroll:
+                if result:
+                    self.bankroll += 500
+                elif self.bankroll < 500:         # To be changed later
+                    self.bankroll = 0
+                else:
+                    self.bankroll -= 500
             else:
-                self.bankroll -= 500
+                print("Insufficient funds!")
+                break
