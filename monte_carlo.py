@@ -5,8 +5,10 @@
 # Will add elements of expectation.
 
 # Imports
-from monte_carlo import coin_flip
+from monte_carlo import coin
 from monte_carlo import player
+from monte_carlo import dice
+from monte_carlo import distribution
 
 def main():
     print("Implementation of Completely Fictitious Casino!")
@@ -14,6 +16,7 @@ def main():
     print("1. Coin flip")
     print("2. Random")
     print("3: Player testing")    
+    print("4: Dice")
     option = int(input("Choice: "))
 
     if (option == 1):
@@ -68,6 +71,11 @@ def main():
         for p in players:
             print(p.get_bankroll())
             print(p.get_results())
+
+    elif (option == 4):
+        game = dice.Dice()
+        game.roll(1000)
+        distribution.Distribution.normal(dataset = game.get_results())
 
     else:
         exit()
