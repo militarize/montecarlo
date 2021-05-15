@@ -1,4 +1,4 @@
-# monte_carlo
+# montecarlo
 Can you break the bank at Monte Carlo?
 
 ## Project Limitations
