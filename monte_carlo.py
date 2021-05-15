@@ -69,6 +69,7 @@ def main():
         game = dice.Dice()
         game.roll(1000)
         distribution.Distribution.normal(dataset = game.get_results())
+        plt.show()
 
     else:
         exit()

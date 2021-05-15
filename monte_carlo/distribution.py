@@ -23,9 +23,9 @@ class Distribution:
         binwidth = ((max(dataset) - min(dataset)) /
             (round(math.sqrt(len(dataset)))))
         
-        plot = sns.histplot(
+        return sns.histplot(
             dataset,
             kde = True,
             bins = (np.arange(min(dataset), max(dataset) + binwidth, binwidth)),
-            stat = "probability")
-        plt.show()
+            stat = "probability",
+            discrete = True)
