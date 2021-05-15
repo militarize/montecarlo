@@ -23,6 +23,7 @@ class Distribution:
         binwidth = ((max(dataset) - min(dataset)) /
             (round(math.sqrt(len(dataset)))))
         
+        # This plot can definitely be improved
         return sns.histplot(
             dataset,
             kde = True,
