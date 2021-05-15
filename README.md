@@ -15,6 +15,6 @@ Developing this to learn:
 * statistics;
 * gambling theory;
 
-and ideas surrounding **randomness**.
+and ideas surrounding _**randomness**_, uncertainty, and risk.
 
 I know nothing more than I know. And even less of the things I know not.
