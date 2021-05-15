@@ -1,4 +1,4 @@
-# monte_carlo library
+# montecarlo library
 
 ## TODO
 * Clean up and improve coin.py
