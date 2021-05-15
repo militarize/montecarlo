@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 import math
 
 def main():
+    """An example implementation of the montecarlo library."""
     print("Implementation of Completely Fictitious Casino!")
     print("Game?")
     print("1. Coin flip")
@@ -68,6 +69,10 @@ def main():
     elif (option == 4):
         game = dice.Dice()
         game.roll(1000)
+        distribution.Distribution.normal(dataset = game.get_results())
+        plt.show()
+        game = dice.Dice(2)
+        game.roll(10000)
         distribution.Distribution.normal(dataset = game.get_results())
         plt.show()
 
