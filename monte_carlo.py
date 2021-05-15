@@ -10,6 +10,12 @@ from monte_carlo import player
 from monte_carlo import dice
 from monte_carlo import distribution
 
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+import math
+
 def main():
     print("Implementation of Completely Fictitious Casino!")
     print("Game?")
@@ -23,26 +29,13 @@ def main():
         number_of_games = int(input("How many times do you want play?: "))
         number_of_trials = int(input("Number of flips per game?: "))
 
-        for n in range(number_of_games):
-            game = coin_flip.CoinFlip()
-
-            if (number_of_trials > 1):
-                game.flip(number_of_trials)
-                heads = game.get_heads()
-                tails = game.get_tails()
-                [fair, p, q] = game.coin_info()
-
-                print("Game #: " + str(n+1) + "\tTotal flips: " + 
-                    str(number_of_trials))
-                print("success: " + str(p) + "\tfailure: " + str(q))
-                print("# of heads: " + str(heads))
-                print("# of tails: " + str(tails))
-            else:
-                print(game.flip())
+        for g in range(number_of_games):
+            game = coin.Coin()
+            print(game.game(number_of_trials))
 
     elif (option == 2):
         # This really is Bernoulli
-        game = coin_flip.CoinFlip(False)
+        game = coin.Coin(False)
         print(game.coin_info())
 
         for n in range(100):
@@ -58,7 +51,7 @@ def main():
         
         players = []
         for i in range(x):
-            game = coin_flip.CoinFlip(True)
+            game = coin.Coin(True)
             print(game.game(y))
             
             p = player.Player()

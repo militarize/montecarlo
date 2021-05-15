@@ -1,6 +1,10 @@
 #!/bin/env python3 
 # We simulate coin flips.
 # Sounds boring. But as an introduction to randomness, quite elegant.
+
+# Imports
+import numpy as np
+
 from numpy import random
 
 class Coin:
@@ -42,9 +46,9 @@ class Coin:
         """
         # Perhaps pass in number of "players" as well, generate ndarray?
         if self.fair:
-            self.values = random.randint(2, size = number_of_trials)
+            self.values = random.randint(2, size = n_trials)
         else:
-            results = random.rand(number_of_trials)
+            results = random.rand(n_trials)
             for i in range(len(results)):
                 results[i] = int(results[i] * 10) / 10.00
             self.values = results
