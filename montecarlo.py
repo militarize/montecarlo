@@ -5,10 +5,10 @@
 # Will add elements of expectation.
 
 # Imports
-from monte_carlo import coin
-from monte_carlo import player
-from monte_carlo import dice
-from monte_carlo import distribution
+from montecarlo import coin
+from montecarlo import player
+from montecarlo import dice
+from montecarlo import distribution
 
 import numpy as np
 import seaborn as sns
