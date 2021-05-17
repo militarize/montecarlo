@@ -1,6 +1,10 @@
 # montecarlo
 Can you break the bank at Monte Carlo?
 
+## Quick Links
+* [Wiki](https://github.com/0xA2A3/montecarlo/wiki): Code documentation  
+* [Project](https://0xa2a3.github.io/montecarlo)  
+
 ## Purpose and Scope
 In the Preface to *Fooled by Randomness*, Nassim Nicholas Taleb states:
 
