@@ -19,22 +19,24 @@ def get_sample_space(events):
     Returns:
         Currently, dict{}
     """
-
     if type(events) is not None:
         return collections.Counter(events)
 
 
-def p_event(events, sample_space):
+def p_event(outcomes):
     """Returns probability (real number) between 0 and 1 for given events in sample_space, n times.
 
     Example: events = { "H", "T" } how many times out of sample_space?
     IE: frequencies
 
     Parameters:
-        events = events we are interested in
-        sample_space = total sample space (iterable)
+        outcomes = data containing outcomes of trials
 
     Returns:
         Iterable of real numbers between 0 and 1 representing probabilities of events
     """
-    pass
+    # collections.Counter returns a dict of all outcomes and the respected frequencies
+    c = collections.Counter(outcomes)
+
+    # convert the dictionary to one of probabilities instead
+    return dict((key, value / sum(c.values())) for (key, value) in c.items())

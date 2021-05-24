@@ -30,5 +30,15 @@ def main():
 
     print(freak.get_sample_space(x))
 
+    print()
+    print()
+
+    probabilities = freak.p_event(x)
+    
+    print("The probabilities for all outcomes:")
+    for p in probabilities:
+        print(str(p) + ": " + str(probabilities[p]))
+    print(sum(probabilities.values()))
+
 if __name__ == '__main__':
     main()
