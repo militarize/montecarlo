@@ -4,7 +4,10 @@
 #
 # Imports
 from edge import event
+from edge import freak
 from games import coin
+
+import numpy as np
 
 def main():
     x = coin.Coin({"H", "T"})
@@ -22,6 +25,10 @@ def main():
 
     for c in event.combos(x.get_sample_space(), 3):
         print(c)
+
+    x = np.random.randint(0, 6, 1000)
+
+    print(freak.get_sample_space(x))
 
 if __name__ == '__main__':
     main()

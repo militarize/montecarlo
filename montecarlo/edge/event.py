@@ -35,6 +35,20 @@ def combos(sample_space, n, r=True, g=True):
     else:
         return itertools.combinations(sample_space, n)
 
+def self_select(sample_space, n):
+    """Returns self-selected random sample of n outcomes.
+
+    Example: coin flip of n = 1000 times
+
+    Parameters:
+        sample_space = the base sample space of items to be selected
+        n = number of trials
+
+    Returns:
+        dict for now
+    """
+    pass
+
 
 def is_event(events, sample_space):
     """Returns boolean value indicating if given events are in the sample space.
