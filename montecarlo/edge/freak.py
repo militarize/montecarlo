@@ -8,7 +8,7 @@
 import collections
 
 
-def get_sample_space(events, *dtype):
+def get_sample_space(events):
     """Returns a dict{}(?) containing all unique elements of the data and their frequencies.
 
     Parameters:
@@ -20,7 +20,7 @@ def get_sample_space(events, *dtype):
         Currently, dict{}
     """
 
-    if dtype is not None:
+    if type(events) is not None:
         return collections.Counter(events)
 
 
