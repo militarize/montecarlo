@@ -19,7 +19,7 @@ def event_space(sample_space):
     return itertools.chain.from_iterable(itertools.combinations(sample_space, r) for r in range(len(sample_space) + 1))
 
 
-def combos(sample_space, n, r=True, g=True):
+def combos(sample_space, n, r = True, order = False):
     """Uses a generator to return all combinations of given sample_space of n-length.
 
     Parameters:
@@ -27,13 +27,16 @@ def combos(sample_space, n, r=True, g=True):
         r = replacement?
         g = generator? (test)
     """
-    if r and g:
+    if order:
+        for combo in itertools.permutations(sample_space, n):
+            yield combo
+    elif r:
         for combo in itertools.combinations_with_replacement(sample_space, n):
             yield combo
-    elif r and not g:
-        return itertools.combinations_with_replacement(sample_space, n)
     else:
-        return itertools.combinations(sample_space, n)
+        for combo in itertools.combinations(sample_space, n):
+            yield combo
+
 
 def self_select(sample_space, n):
     """Returns self-selected random sample of n outcomes.
