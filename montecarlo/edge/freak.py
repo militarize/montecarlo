@@ -8,7 +8,7 @@
 import collections
 
 
-def get_sample_space(events):
+def get_sample_space(outcomes):
     """Returns a dict{}(?) containing all unique elements of the data and their frequencies.
 
     Parameters:
@@ -19,9 +19,12 @@ def get_sample_space(events):
     Returns:
         Currently, dict{}
     """
-    if type(events) is not None:
-        return collections.Counter(events)
+    if type(outcomes) is not None:
+        return collections.Counter(outcomes)
 
+def get_count(events, outcome):
+    """Returns a count of outcome in events."""
+    pass
 
 def p_event(outcomes):
     """Returns probability (real number) between 0 and 1 for given events in sample_space, n times.

@@ -23,11 +23,11 @@ class Game:
 
         self.results = []                           # We are still interested in results.
 
-    def get_sample_space(self):
+    def sample_space(self):
         """Returns the current sample space for the game."""
         return self.sample_space
 
-    def set_sample_space(self, n):
+    def new_sample_space(self, n):
         """Updates sample_space to combos of base_samples of n length.
 
         This method is subject to change. There are concerns for speed.
