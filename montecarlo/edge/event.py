@@ -59,10 +59,15 @@ def is_event(events, sample_space):
     Parameters:
         events = collection of outcomes
         sample_space = iterable collection representing sample_space
+
+    Notes:
+        - set{} has issubset() method also
+            - trying to keep this flexible
     """
     # return [True for event in set(events) if event in set(sample_space)]
     return [event for event in events if event in sample_space]
     # return [True if event in set(events) else False for event in set(sample_space)]
+    # return [event.issubset(sample_space)]
 
 
 def p_event(events, sample_space):
