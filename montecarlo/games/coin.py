@@ -6,6 +6,7 @@ from . import game
 
 import numpy as np
 
+
 class Coin(game.Game):
     """The quintessential coin flip.
 
@@ -20,7 +21,11 @@ class Coin(game.Game):
         fair = boolean value of coin's "fairness"
             Will implement an unfair coin at some point
         """
-        super(Coin, self).__init__(samples)
+        if len(samples) != 2:
+            super(Coin, self).__init__({ 1, 0 })
+        else:
+            super(Coin, self).__init__(samples)
+
         if fair:
             self.fair = fair
         else:

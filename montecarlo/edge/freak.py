@@ -6,6 +6,7 @@
 #
 # Imports
 import collections
+import itertools
 
 
 def frequencies(outcomes):
@@ -20,12 +21,35 @@ def frequencies(outcomes):
         Currently, dict{}
     """
     if type(outcomes) is not None:
-        return collections.Counter(outcomes)
+        # Return all of the items in Counter
+        return collections.Counter(outcomes).items()
+
+
+def groups(outcomes, g = True):
+    """Generates a list of groups of outcomes.
+
+    Example: [ "H", "H", "T", "T", "H", "H", "H", "H", "T", "T" ]
+
+    ["H", 2]
+    ["T", 2]
+    ["H", 4]
+    ["T", 2]
+
+    Parameters:
+        outcomes = iterable of outcomes
+        g = True for generator
+    """
+    if g:
+        for val, streak in itertools.groupby(outcomes):
+            yield [val, sum([1 for _ in streak])]
+    else:
+        return [[val, sum([1 for _ in streak])] for val, streak in itertools.groupby(outcomes)]
+
 
 def p_event(outcomes):
     """Returns probability (real number) between 0 and 1 for given events in sample_space, n times.
 
-    Example: events = { "H", "T" } how many times out of sample_space?
+    Example: events = { "H" , "T" } how many times out of sample_space?
     IE: frequencies
 
     Parameters:

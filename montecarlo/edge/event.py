@@ -28,7 +28,7 @@ def combos(sample_space, n, r = True, order = False):
         g = generator? (test)
     """
     if order:
-        for combo in itertools.permutations(sample_space, n):
+        for combo in itertools.product(sample_space, n):
             yield combo
     elif r:
         for combo in itertools.combinations_with_replacement(sample_space, n):
