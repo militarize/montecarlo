@@ -3,6 +3,7 @@
 #
 # Imports
 import itertools
+import enum
 
 
 class Game:
@@ -23,7 +24,7 @@ class Game:
 
         self.results = []                           # We are still interested in results.
 
-    def sample_space(self):
+    def get_sample_space(self):
         """Returns the current sample space for the game."""
         return self.sample_space
 
@@ -32,7 +33,7 @@ class Game:
 
         This method is subject to change. There are concerns for speed.
         """
-        self.sample_space = itertools.combinations_with_replacement(self.base_samples, n)
+        self.sample_space = set([i for i in itertools.product(self.base_samples, repeat = n)])
 
     def get_results(self):
         """Returns current results for the "lifetime" of the game."""
